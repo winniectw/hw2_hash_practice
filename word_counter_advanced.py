@@ -39,9 +39,34 @@ fig = go.Figure(data=[
 ])
 
 fig.update_layout(
-    title='Word Frequency',
-    xaxis_title='Word',
-    yaxis_title='Count'
+    plot_bgcolor='white',
+    title=dict(
+        text='Word Frequency',
+        x=0.5,
+        xanchor='center',
+        font=dict(size=24, family='Arial Black', color='black')
+    ),
+    xaxis=dict(
+        title=dict(
+            text='Word',
+            font=dict(size=18, family='Arial Black', color='black')
+        ),
+        tickfont=dict(size=14, family='Arial'),
+    ),
+    yaxis=dict(
+        title=dict(
+            text='Count',
+            font=dict(size=18, family='Arial Black', color='black')
+        ),
+        tickfont=dict(size=14, family='Arial'),
+        gridcolor='black',
+        zeroline=True,
+        zerolinecolor='black'
+    ),
+    dragmode='pan',
+    autosize=True
 )
 
-fig.show()
+fig.show(config={
+    'scrollZoom': True,
+    'displaylogo': False})
